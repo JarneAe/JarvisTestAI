@@ -85,7 +85,7 @@ def getPerson(text):
              return wordlist[i+2] + ' '+wordlist[i+3]
 
 def sendFunction(text, foundWakeWord):
-    if not foundWakeWord == True:
+    if foundWakeWord != True:
         print("You said: " + text)
     else:
         print("Welcome sir")
