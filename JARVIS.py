@@ -86,7 +86,10 @@ def getPerson(text):
 
 while True:
 
-    if(wakeWord(text)):
-        print("Welcome sir!")
+    # response = ''
+    text = recordAudio()
+    
+    if wakeWord(text):
+        print("Welcome sir")
     else:
-        print("You said:" + text)
+        print("You said: " + text)
