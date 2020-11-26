@@ -84,12 +84,18 @@ def getPerson(text):
          if i + 3 <= len(wordlist) - 1 and wordlist[i].lower() == 'who' and wordlist[i+1].lower() == 'is':
              return wordlist[i+2] + ' '+wordlist[i+3]
 
-while True:
-
-    # response = ''
-    text = recordAudio()
-    
-    if (wakeWord(text) == True):
-        print("Welcome sir")
-    else:
+def sendFunction(text, foundWakeWord):
+    if not foundWakeWord == True:
         print("You said: " + text)
+    else:
+        print("Welcome sir")
+
+    text = recordAudio()
+
+
+while True:
+    text = recordAudio()
+    # response = ''
+
+    foundWakeWord = wakeWord(text)
+    sendFunction(text, foundWakeWord)
