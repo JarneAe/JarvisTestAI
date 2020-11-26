@@ -48,7 +48,7 @@ def wakeWord(text):
         if inputw in phrase:
             return True
     
-    return inputw
+    return False
 
 
 def getDate():
@@ -89,7 +89,7 @@ while True:
     # response = ''
     text = recordAudio()
     
-    if wakeWord(text):
+    if (wakeWord(text) == True):
         print("Welcome sir")
     else:
         print("You said: " + text)
