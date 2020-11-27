@@ -15,8 +15,8 @@ class SpeechRecognition():
         try:
             print('I think you said: ' + recognizer.recognize_sphinx(audio))
         except sr.UnknownValueError: 
-            print('Google Speech Recognition could not understand you, you dumbass.')
+            print('Sphinx could not understand audio.')
         except sr.RequestError as e:
-            print("Request results from Google Speech service error; " + e)
+            print("Sphinx error; {0}".format(e))
 
         return recognizer.recognize_sphinx(audio)
