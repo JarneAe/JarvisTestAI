@@ -4,14 +4,14 @@ import os
 
 class Narrator():
 
-    # Functionality: [narrator]
-    #
-    # Sets an object containing text, language and slow attribute
-    # and then converts it to an audio file and saves that to play it.
-    def narrator(self, inputUser):
+    def __init__(self, inputUser):
+        self.inputUser = inputUser
 
-        print(inputUser)
+    # Output
+    def narrator(self):
 
-        narratorOutput = gTTS(text = inputUser, lang = "eng", slow = False)
-        narratorOutput.save("narrator.mp3")
-        playsound("narrator.mp3")
+        narratorOutput = gTTS(text = self.inputUser, lang = "en", slow = False)
+        narratorOutput.save("narrator.wav")
+        playsound("narrator.wav")
+
+        return True
