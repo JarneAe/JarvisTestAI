@@ -1,4 +1,5 @@
 from Narrator import Narrator
+from GetDate import GetDate
 
 class CommandListener():
 
@@ -13,7 +14,7 @@ class CommandListener():
 
     def commandListener(self):
         formattedInput = self.formatInput()
-        COMMANDS = ["say"]
+        COMMANDS = ["say", "what is the date"]
 
         for cmds in COMMANDS:
             if formattedInput[0] in cmds:
@@ -21,5 +22,9 @@ class CommandListener():
                     slicedList = formattedInput[1:]
                     narrator = Narrator(" ".join(slicedList))
                     narratorCall = narrator.narrator()
+            elif self.userInput.lower() in cmds:
+                narrator = Narrator(GetDate().getDate())
+                narratorCall = narratorCall.narrator
+
 
         return True

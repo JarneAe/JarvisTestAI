@@ -8,8 +8,8 @@ import wikipedia
 
 warnings.filterwarnings('ignore')
 
-speechRecognition = SpeechRecognition()
-userInput = speechRecognition.recordAudio()
+#speechRecognition = SpeechRecognition()
+#userInput = speechRecognition.recordAudio()
 
-commandListener = CommandListener(userInput)
+commandListener = CommandListener("what is the date")
 commandExecutor = commandListener.commandListener()
