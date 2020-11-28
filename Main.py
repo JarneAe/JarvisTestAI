@@ -8,10 +8,8 @@ import wikipedia
 
 warnings.filterwarnings('ignore')
 
-#speechRecognition = SpeechRecognition()
-#userInput = speechRecognition.recordAudio()
+speechRecognition = SpeechRecognition()
+userInput = speechRecognition.recordAudio()
 
-commandListener = CommandListener("say ik ben heet")
+commandListener = CommandListener(userInput)
 commandExecutor = commandListener.commandListener()
-
-print(commandExecutor)
