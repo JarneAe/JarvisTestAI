@@ -19,4 +19,4 @@ class GetDate():
         for i in range(1, 12):
             month_names.append(cld.month_name[i])
     
-        return ("Today is " + weekDayCurrent + " " + month_names[int(monthNumCurrent) - int(1)] + " the " + num2words(dayNumCurrent, to="ordinal_num") + ".")
+        return "Today is " + weekDayCurrent + " " + month_names[int(monthNumCurrent) - int(1)] + " the " + num2words(dayNumCurrent, to="ordinal_num") + "."
