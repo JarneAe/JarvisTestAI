@@ -16,6 +16,7 @@ class SpeechRecognition():
         try:
             narrator = Narrator("I think you said " + recognizer.recognize_google(audio))
             narratorCall = narrator.narrator()
+            print("I think you said: " + recognizer.recognize_google(audio))
         except sr.UnknownValueError:
             print("Google Speech Recognition could not understand audio")
         except sr.RequestError as e:
