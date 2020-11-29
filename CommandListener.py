@@ -62,6 +62,8 @@ class CommandListener:
             elif inputGather in DATE_CMDS:
                 if inputSnippets[0] == "repeat":
                     pass
+                if inputSnippets[0] == "when":
+                    pass
                 elif "getDate" in alreadyRan:
                     pass
                 else:
@@ -82,6 +84,10 @@ class CommandListener:
                     goat()
             elif inputGather in LOOKUP_CMDS:
                 if inputSnippets[0] == "repeat":
+                    pass
+                elif "date" in inputSnippets:
+                    pass
+                elif "today" in inputSnippets:
                     pass
                 elif "lookup" in alreadyRan:
                     pass
