@@ -10,7 +10,7 @@ class Search:
         return splitUserInput
 
     def searchFilter(self):
-        POP_LOOKUP_ARGS = ["is", "was", "did", "the", "take", "place", "happen", "invented"]
+        POP_LOOKUP_ARGS = ["is", "was", "did", "the", "take", "place", "happen", "invented", "born"]
 
         formattedInput = self.formatInput()
         removeCmd = formattedInput[1:]
