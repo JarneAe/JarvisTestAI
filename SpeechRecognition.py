@@ -13,8 +13,6 @@ def recordAudio():
 
     # Recognize speech using Google Speech Recognition
     try:
-        narrator = Narrator("I think you said " + recognizer.recognize_google(audio))
-        narrator.narrator()
         print("I think you said: " + recognizer.recognize_google(audio))
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")

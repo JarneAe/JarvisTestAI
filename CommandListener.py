@@ -1,7 +1,7 @@
 from Narrator import Narrator
 from GetDate import getDate
 from getTime import getTime
-
+from Greetings import greetings
 class CommandListener:
 
     # Initialize userInput variable.
@@ -21,7 +21,7 @@ class CommandListener:
         COMMANDS = ["say", "exit"]
         DATE_CMDS = ["today", "date", "day"]
         TIME_CMDS = ["time"]
-
+        GREET_CMDS = ["hello","hey","goodmorning",'jarvis']
 
 
         for cmds in COMMANDS:
@@ -43,6 +43,11 @@ class CommandListener:
                 if snippets in timeCmds:
                     inputSnippets.clear()
                     getTime()
+        for greetCmds in GREET_CMDS:
+            for snippets in inputSnippets:
+                if snippets in greetCmds:
+                    inputSnippets.clear()
+                    greetings()
 
 
         return True
