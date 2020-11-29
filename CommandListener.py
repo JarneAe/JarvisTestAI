@@ -1,6 +1,6 @@
 from Narrator import Narrator
 from GetDate import getDate
-
+from getTime import getTime
 
 class CommandListener:
 
@@ -20,6 +20,9 @@ class CommandListener:
         formattedInput = self.formatInput()
         COMMANDS = ["say", "exit"]
         DATE_CMDS = ["today", "date", "day"]
+        TIME_CMDS = ["time"]
+
+
 
         for cmds in COMMANDS:
             if formattedInput[0] in cmds:
@@ -29,11 +32,17 @@ class CommandListener:
                     narrator.narrator()
                 if formattedInput[0] == "exit":
                     exit()
-        dateSnippets = formattedInput.copy()
+        inputSnippets = formattedInput.copy()
         for dateCmds in DATE_CMDS:
-            for snippets in dateSnippets:
+            for snippets in inputSnippets:
                 if snippets in dateCmds:
-                    dateSnippets.clear()
+                    inputSnippets.clear()
                     getDate()
+        for timeCmds in TIME_CMDS:
+            for snippets in inputSnippets:
+                if snippets in timeCmds:
+                    inputSnippets.clear()
+                    getTime()
+
 
         return True
