@@ -22,49 +22,74 @@ class CommandListener:
 
     # Actual CommandListener with the command lists.
     def commandListener(self):
+        # Formatted user input, please don't change this one.
         formattedInput = self.formatInput()
-        COMMANDS = ["say", "exit"]
-        LOOKUP_CMDS = ["look up", "who", "where", "when", "what"]
-        DATE_CMDS = ["today", "date", "day"]
-        TIME_CMDS = ["time"]
-        GREET_CMDS = ["hello", "hey", "goodmorning", "jarvis"]
-        GOAT_CMDS = ["goat", "goats"]
-
-        for cmds in COMMANDS:
-            if formattedInput[0] in cmds:
-                if formattedInput[0] == "say":
-                    slicedList = formattedInput[1:]
-                    narrator = Narrator(" ".join(slicedList))
-                    narrator.narrator()
-                if formattedInput[0] == "exit":
-                    exit()
+        # Copy of the user input variable, can be changed.
         inputSnippets = formattedInput.copy()
-        for dateCmds in DATE_CMDS:
-            for snippets in inputSnippets:
-                if snippets in dateCmds:
-                    inputSnippets.clear()
+        # Check if something already ran
+        alreadyRan = []
+
+        TIME_CMDS = ["time"]
+        COMMANDS = ["say", "repeat"]
+        GOAT_CMDS = ["goat", "goats"]
+        DATE_CMDS = ["today", "date", "day"]
+        GREET_CMDS = ["hello", "hey", "goodmorning", "jarvis"]
+        LOOKUP_CMDS = ["look up", "who", "where", "when", "what"]
+
+        for inputGather in inputSnippets:
+            if inputGather in GREET_CMDS:
+                if inputSnippets[0] == "repeat":
+                    pass
+                elif "greetings" in alreadyRan:
+                    pass
+                else:
+                    greetings()
+                    alreadyRan.append("greetings")
+            elif inputGather in COMMANDS:
+                if inputGather == "repeat":
+                    if "repeat" in alreadyRan:
+                        pass
+                    else:
+                        slicedList = formattedInput[1:]
+                        narrator = Narrator(" ".join(slicedList))
+                        narrator.narrator()
+                        alreadyRan.append("repeat")
+                if inputGather == "exit":
+                    if inputGather == "repeat":
+                        pass
+                    else:
+                        exit()
+            elif inputGather in DATE_CMDS:
+                if inputSnippets[0] == "repeat":
+                    pass
+                elif "getDate" in alreadyRan:
+                    pass
+                else:
                     getDate()
-        for timeCmds in TIME_CMDS:
-            for snippets in inputSnippets:
-                if snippets in timeCmds:
-                    inputSnippets.clear()
+                    alreadyRan.append("getDate")
+            elif inputGather in TIME_CMDS:
+                if inputSnippets[0] == "repeat":
+                    pass
+                elif "getTime" in alreadyRan:
+                    pass
+                else:
                     getTime()
-        for greetCmds in GREET_CMDS:
-            if inputSnippets[0] in greetCmds:
-                inputSnippets.clear()
-                greetings()
-        for lookupCmds in LOOKUP_CMDS:
-            for snippets in inputSnippets:
-                if snippets[0] in lookupCmds:
-                    inputSnippets.clear()
+                    alreadyRan.append("getTime")
+            elif inputGather in GOAT_CMDS:
+                if inputSnippets[0] == "repeat":
+                    pass
+                else:
+                    goat()
+            elif inputGather in LOOKUP_CMDS:
+                if inputSnippets[0] == "repeat":
+                    pass
+                elif "lookup" in alreadyRan:
+                    pass
+                else:
                     search = Search(self.userInput)
                     searchFiltered = search.searchFilter()
                     wiki = SearchWiki(searchFiltered)
                     wiki.searchWiki()
-        inputNoSnippet = self.userInput
-        for goatCmds in GOAT_CMDS:
-            if inputNoSnippet in goatCmds:
-                inputSnippets.clear()
-                goat()
+                    alreadyRan.append("lookup")
 
         return True

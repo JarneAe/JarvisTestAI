@@ -1,5 +1,4 @@
 import speech_recognition as sr
-from Narrator import Narrator
 
 
 def recordAudio():
@@ -13,10 +12,15 @@ def recordAudio():
 
     # Recognize speech using Google Speech Recognition
     try:
-        print("I think you said: " + recognizer.recognize_google(audio))
+        print("I think you said: " + recognizer.recognize_google(audio, language="en-GB"))
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
-    return recognizer.recognize_google(audio)
+    if recognizer.recognize_google(audio, language="en-GB").lower() == "good morning":
+        inputUser = "goodmorning"
+    else:
+        inputUser = recognizer.recognize_google(audio, language="en-GB").lower()
+
+    return inputUser
