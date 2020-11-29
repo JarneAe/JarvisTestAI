@@ -48,10 +48,9 @@ class CommandListener:
                     inputSnippets.clear()
                     getTime()
         for greetCmds in GREET_CMDS:
-            for snippets in inputSnippets:
-                if snippets in greetCmds:
-                    inputSnippets.clear()
-                    greetings()
+            if inputSnippets[0] in greetCmds:
+                inputSnippets.clear()
+                greetings()
         for lookupCmds in LOOKUP_CMDS:
             for snippets in inputSnippets:
                 if snippets[0] in lookupCmds:

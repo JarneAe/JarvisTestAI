@@ -7,3 +7,5 @@ def greetings():
 
     narrator = Narrator(random.choice(PREDEFINED_GREETINGS))
     narrator.narrator()
+
+    return True

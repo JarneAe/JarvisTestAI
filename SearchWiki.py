@@ -1,4 +1,4 @@
-import wikipedia
+import wikipediaapi
 import webbrowser
 
 
@@ -8,8 +8,11 @@ class SearchWiki:
         self.inputUser = inputUser
 
     def searchWiki(self):
+        wiki = wikipediaapi.Wikipedia('en')
 
-        search = wikipedia.search(self.inputUser)
-        searchResult = wikipedia.page(search[0])
+        wikiPage = wiki.page(self.inputUser)
+        searchResult = wikiPage.fullurl
 
-        webbrowser.open(searchResult.url)
+        webbrowser.open(searchResult)
+
+        return True
