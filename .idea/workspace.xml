@@ -27,7 +27,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.Goats">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Goats" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="JarvisTestAI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,8 +114,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Goats" />
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.Goats" />
         <item itemvalue="Python.Search" />
         <item itemvalue="Python.SearchWiki" />
       </list>
@@ -141,22 +141,22 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="680" y="355" width="622" height="403" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1606648511247" />
-    <state width="1825" height="259" key="GridCell.Tab.0.bottom" timestamp="1606673922219">
+    <state width="1825" height="259" key="GridCell.Tab.0.bottom" timestamp="1606681540584">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1825" height="259" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1606673922219" />
-    <state width="1825" height="259" key="GridCell.Tab.0.center" timestamp="1606673922218">
+    <state width="1825" height="259" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1606681540584" />
+    <state width="1825" height="259" key="GridCell.Tab.0.center" timestamp="1606681540583">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1825" height="259" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1606673922218" />
-    <state width="1825" height="259" key="GridCell.Tab.0.left" timestamp="1606673922213">
+    <state width="1825" height="259" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1606681540583" />
+    <state width="1825" height="259" key="GridCell.Tab.0.left" timestamp="1606681540582">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1825" height="259" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1606673922213" />
-    <state width="1825" height="259" key="GridCell.Tab.0.right" timestamp="1606673922218">
+    <state width="1825" height="259" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1606681540582" />
+    <state width="1825" height="259" key="GridCell.Tab.0.right" timestamp="1606681540583">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1825" height="259" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1606673922218" />
+    <state width="1825" height="259" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1606681540583" />
     <state x="172" y="127" width="1648" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606645334890">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

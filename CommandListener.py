@@ -4,7 +4,8 @@ from GetTime import getTime
 from Greetings import greetings
 from Search import Search
 from SearchWiki import SearchWiki
-from Goats import goatMe
+from Goats import goat
+
 
 class CommandListener:
 
@@ -27,7 +28,7 @@ class CommandListener:
         DATE_CMDS = ["today", "date", "day"]
         TIME_CMDS = ["time"]
         GREET_CMDS = ["hello", "hey", "goodmorning", "jarvis"]
-        GOAT_CMDS = ["goat","goats"]
+        GOAT_CMDS = ["goat", "goats"]
 
         for cmds in COMMANDS:
             if formattedInput[0] in cmds:
@@ -60,12 +61,10 @@ class CommandListener:
                     searchFiltered = search.searchFilter()
                     wiki = SearchWiki(searchFiltered)
                     wiki.searchWiki()
+        inputNoSnippet = self.userInput
         for goatCmds in GOAT_CMDS:
-            if inputSnippets[0] in goatCmds:
+            if inputNoSnippet in goatCmds:
                 inputSnippets.clear()
-                goatMe()
-                
-                    
-        
+                goat()
 
         return True
