@@ -3,7 +3,7 @@ from Narrator import Narrator
 
 
 def recordAudio():
-    
+
     # Obtain audio from the microphone
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
