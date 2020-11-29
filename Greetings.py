@@ -1,8 +1,9 @@
-import random   
+import random
 from Narrator import Narrator
 
-def greetings():
-    greetings = ["hello","Greetings","Goodmorning sir","Jarvis on standby","Good day"]
 
-    narrator = Narrator(random.choice(greetings))
+def greetings():
+    PREDEFINED_GREETINGS = ["hello", "greetings", "goodmorning sir", "jarvis on standby", "good day"]
+
+    narrator = Narrator(random.choice(PREDEFINED_GREETINGS))
     narrator.narrator()

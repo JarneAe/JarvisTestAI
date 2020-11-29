@@ -1,7 +1,11 @@
 from Narrator import Narrator
 from GetDate import getDate
-from getTime import getTime
+from GetTime import getTime
 from Greetings import greetings
+from Search import Search
+from SearchWiki import SearchWiki
+
+
 class CommandListener:
 
     # Initialize userInput variable.
@@ -19,10 +23,10 @@ class CommandListener:
     def commandListener(self):
         formattedInput = self.formatInput()
         COMMANDS = ["say", "exit"]
+        LOOKUP_CMDS = ["look up", "who", "where", "when", "what"]
         DATE_CMDS = ["today", "date", "day"]
         TIME_CMDS = ["time"]
-        GREET_CMDS = ["hello","hey","goodmorning",'jarvis']
-
+        GREET_CMDS = ["hello", "hey", "goodmorning", "jarvis"]
 
         for cmds in COMMANDS:
             if formattedInput[0] in cmds:
@@ -48,6 +52,13 @@ class CommandListener:
                 if snippets in greetCmds:
                     inputSnippets.clear()
                     greetings()
-
+        for lookupCmds in LOOKUP_CMDS:
+            for snippets in inputSnippets:
+                if snippets[0] in lookupCmds:
+                    inputSnippets.clear()
+                    search = Search(self.userInput)
+                    searchFiltered = search.searchFilter()
+                    wiki = SearchWiki(searchFiltered)
+                    wiki.searchWiki()
 
         return True

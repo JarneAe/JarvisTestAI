@@ -1,6 +1,7 @@
 from datetime import datetime
 from Narrator import Narrator
 
+
 def getTime():
     now = datetime.now()
 
