@@ -1,22 +1,26 @@
 from num2words import num2words
+from Narrator import Narrator
 import calendar as cld
 import datetime as dt
 
-class GetDate():
 
-    def getDate(self):
-        # Instantiate the datatime.datetime.now() method
-        now = dt.datetime.now()
+def getDate():
 
-        # Declare certain time related variables
-        currentDate = dt.datetime.today()
-        weekDayCurrent = cld.day_name[currentDate.weekday()]
-        monthNumCurrent = now.month
-        dayNumCurrent = now.day
-        month_names = []
+    # Instantiate the datatime.datetime.now() method
+    now = dt.datetime.now()
 
-        # Get a list of months
-        for i in range(1, 12):
-            month_names.append(cld.month_name[i])
-    
-        return "Today is " + weekDayCurrent + " " + month_names[int(monthNumCurrent) - int(1)] + " the " + num2words(dayNumCurrent, to="ordinal_num") + "."
+    # Declare certain time related variables
+    currentDate = dt.datetime.today()
+    weekDayCurrent = cld.day_name[currentDate.weekday()]
+    monthNumCurrent = now.month
+    dayNumCurrent = now.day
+    month_names = []
+
+    # Get a list of months
+    for i in range(1, 12):
+        month_names.append(cld.month_name[i])
+
+    narrator = Narrator("Today is " + weekDayCurrent + " " + month_names[int(monthNumCurrent) - int(1)] + " the " + num2words(dayNumCurrent, to="ordinal_num") + ".")
+    narrator.narrator()
+
+    return True
