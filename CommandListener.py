@@ -19,7 +19,6 @@ class CommandListener:
 
         return splitUserInput
 
-
     # Actual CommandListener with the command lists.
     def commandListener(self):
         formattedInput = self.formatInput()
