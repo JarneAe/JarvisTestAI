@@ -14,9 +14,9 @@ def recordAudio():
     try:
         print("I think you said: " + recognizer.recognize_google(audio, language="en-GB"))
     except sr.UnknownValueError:
-        print("Google Speech Recognition could not understand audio")
+        raise sr.UnknownValueError("Google Speech Recognition could not understand audio") from None
     except sr.RequestError as e:
-        print("Could not request results from Google Speech Recognition service; {0}".format(e))
+        raise sr.RequestError("Could not request results from Google Speech Recognition service; {0}".format(e)) from None
 
     if recognizer.recognize_google(audio, language="en-GB").lower() == "good morning":
         inputUser = "goodmorning"

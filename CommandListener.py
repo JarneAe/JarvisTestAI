@@ -85,6 +85,8 @@ class CommandListener:
             elif inputGather in LOOKUP_CMDS:
                 if inputSnippets[0] == "repeat":
                     pass
+                elif "time" in inputSnippets:
+                    pass
                 elif "date" in inputSnippets:
                     pass
                 elif "today" in inputSnippets:
