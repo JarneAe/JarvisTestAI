@@ -9,3 +9,6 @@ while True:
 
     commandListener = CommandListener(userInput)
     commandExecutor = commandListener.commandListener()
+
+    commandListener = CommandListener(userInput)
+    commandExecutor = commandListener.commandListener()
