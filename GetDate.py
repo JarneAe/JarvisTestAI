@@ -10,16 +10,17 @@ def getDate():
     now = dt.datetime.now()
 
     # Declare certain time related variables
+    month_names = []
+    dayNumCurrent = now.day
+    monthNumCurrent = now.month
     currentDate = dt.datetime.today()
     weekDayCurrent = cld.day_name[currentDate.weekday()]
-    monthNumCurrent = now.month
-    dayNumCurrent = now.day
-    month_names = []
 
     # Get a list of months
     for i in range(1, 12):
         month_names.append(cld.month_name[i])
 
+    # Pass the arguments in a string and let the narrator say it
     narrator = Narrator("Today is " + weekDayCurrent + " " + month_names[int(monthNumCurrent) - int(1)] + " the " + num2words(dayNumCurrent, to="ordinal_num") + ".")
     narrator.narrator()
 

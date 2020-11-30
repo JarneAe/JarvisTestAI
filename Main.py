@@ -4,7 +4,8 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-userInput = recordAudio()
+while True:
+    userInput = recordAudio()
 
-commandListener = CommandListener(userInput)
-commandExecutor = commandListener.commandListener()
+    commandListener = CommandListener(userInput)
+    commandExecutor = commandListener.commandListener()

@@ -11,7 +11,7 @@ class Narrator:
 
     # Outputs the given input in a text to speech format.
     def narrator(self):
-        narratorOutput = gTTS(text=self.inputUser, lang="en", slow=False)
+        narratorOutput = gTTS(text=self.inputUser, lang="en-ph", slow=False)
         narratorOutput.save("narrator.mp3")
         playsound("narrator.mp3")
         os.remove("narrator.mp3")

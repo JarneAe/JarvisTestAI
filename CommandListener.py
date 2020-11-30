@@ -30,13 +30,14 @@ class CommandListener:
         alreadyRan = []
 
         TIME_CMDS = ["time"]
-        COMMANDS = ["say", "repeat"]
+        COMMANDS = ["exit", "repeat"]
         GOAT_CMDS = ["goat", "goats"]
         DATE_CMDS = ["today", "date", "day"]
         GREET_CMDS = ["hello", "hey", "goodmorning", "jarvis"]
         LOOKUP_CMDS = ["look up", "who", "where", "when", "what"]
 
         for inputGather in inputSnippets:
+            # Greeting commands
             if inputGather in GREET_CMDS:
                 if inputSnippets[0] == "repeat":
                     pass
@@ -45,6 +46,7 @@ class CommandListener:
                 else:
                     greetings()
                     alreadyRan.append("greetings")
+            # Repeat command
             elif inputGather in COMMANDS:
                 if inputGather == "repeat":
                     if "repeat" in alreadyRan:
@@ -59,6 +61,7 @@ class CommandListener:
                         pass
                     else:
                         exit()
+            # Get date command
             elif inputGather in DATE_CMDS:
                 if inputSnippets[0] == "repeat":
                     pass
@@ -69,6 +72,7 @@ class CommandListener:
                 else:
                     getDate()
                     alreadyRan.append("getDate")
+            # Get time command
             elif inputGather in TIME_CMDS:
                 if inputSnippets[0] == "repeat":
                     pass
@@ -77,13 +81,17 @@ class CommandListener:
                 else:
                     getTime()
                     alreadyRan.append("getTime")
+            # Goat command
             elif inputGather in GOAT_CMDS:
                 if inputSnippets[0] == "repeat":
                     pass
                 else:
                     goat()
+            # Lookup command
             elif inputGather in LOOKUP_CMDS:
                 if inputSnippets[0] == "repeat":
+                    pass
+                elif "time" in inputSnippets:
                     pass
                 elif "date" in inputSnippets:
                     pass
