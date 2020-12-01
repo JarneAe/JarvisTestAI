@@ -3,8 +3,9 @@ from Narrator import Narrator
 
 
 def getJoke():
-
     # Inputs arguments and lets the narrator say it
-    narrator = Narrator(pyjokes.get_joke())
+    joke = pyjokes.get_joke()
+    print(joke)
+    narrator = Narrator(joke)
     narrator.narrator()
     return True

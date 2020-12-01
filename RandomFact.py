@@ -3,7 +3,7 @@ import random
 from Narrator import Narrator
 
 
-def getfact():
+def getFact():
 
     # Instantiate a few default output formats for the narrator
     sayings = ['Here\'s a random fact: ', 'Did you know that: ', 'here\'s a fun fact for you: ']
@@ -12,6 +12,7 @@ def getfact():
     x = randfacts.getFact()
 
     # Inputs arguments and lets the narrator say it
+    print((random.choice(sayings) + x))
     narrator = Narrator(random.choice(sayings) + x)
     narrator.narrator()
 

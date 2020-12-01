@@ -5,7 +5,8 @@ from Greetings import greetings
 from Search import Search
 from SearchWiki import SearchWiki
 from Goats import goat
-
+from RandomJoke import getJoke
+from RandomFact import getFact
 
 class CommandListener:
 
@@ -35,6 +36,9 @@ class CommandListener:
         DATE_CMDS = ["today", "date", "day"]
         GREET_CMDS = ["hello", "hey", "goodmorning", "jarvis"]
         LOOKUP_CMDS = ["look up", "who", "where", "when", "what"]
+        JOKE_CMDS = ["joke", "funny"]
+        FACT_CMDS = [ "fact"]
+
 
         for inputGather in inputSnippets:
             # Greeting commands
@@ -105,5 +109,24 @@ class CommandListener:
                     wiki = SearchWiki(searchFiltered)
                     wiki.searchWiki()
                     alreadyRan.append("lookup")
+            #Joke command
+            elif inputGather in JOKE_CMDS:
+                if inputSnippets[0] == "repeat":
+                    pass
+                elif "randomJoke" in alreadyRan:
+                    pass
+                else:
+                    getJoke()
+                    alreadyRan.append("randomJoke")
+            elif inputGather in FACT_CMDS:
+                if inputSnippets[0] == "repeat":
+                    pass
+                elif "RandomFact" in alreadyRan:
+                    pass
+                else:
+                    getFact()
+                    alreadyRan.append("RandomFact")
+                    
+
 
         return True
